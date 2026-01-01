@@ -25,7 +25,8 @@
     "procps",
     "python312@latest",
     "tilt@latest",
-    "yq-go@latest"
+    "yq-go@latest",
+    "vultr@latest"
   ],
   "shell": {
     "init_hook": [
@@ -36,5 +37,8 @@
     "scripts": {
       "test": ["echo \"Error: no test specified\" && exit 1"]
     }
-  }
+  },
+  "paths": [
+    "/home/faris/devops-directive-kubernetes-course/cloud-provider-kind/bin"
+  ]
 }

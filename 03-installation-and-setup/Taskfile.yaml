@@ -1,7 +1,7 @@
 version: "3"
 
 env:
-  CLUSTER_NAME: devops-directive-kubernetes-course
+  CLUSTER_NAME: devops-directive-kubernetes-course1
   CIVO_REGION: NYC1
   GCP_REGION: us-central1
   GCP_ZONE: us-central1-a
@@ -92,7 +92,7 @@ tasks:
       - civo firewall delete ${CLUSTER_NAME} --region ${CIVO_REGION} -y
       - civo network delete ${CLUSTER_NAME} --region ${CIVO_REGION} -y
     desc: Clean up the Civo Kubernetes cluster and associated resources
-
+  
   gcp:01-init-cli:
     cmds:
       - gcloud init
@@ -102,13 +102,13 @@ tasks:
     cmds:
       - |
         gcloud services enable \
-          compute.googleapis.com \
-          container.googleapis.com \
-          cloudresourcemanager.googleapis.com \
-          iam.googleapis.com \
-          secretmanager.googleapis.com \
-          servicemanagement.googleapis.com \
-          serviceusage.googleapis.com
+        compute.googleapis.com \
+        container.googleapis.com \
+        cloudresourcemanager.googleapis.com \
+        iam.googleapis.com \
+        secretmanager.googleapis.com \
+        servicemanagement.googleapis.com \
+        serviceusage.googleapis.com
     desc: "Enable necessary APIs"
 
   gcp:03-set-region-and-zone:
@@ -134,7 +134,7 @@ tasks:
   gcp:06-create-cluster:
     desc: "Create GKE cluster"
     vars:
-      GCP_PROJECT_ID: kubernetes-course-424917
+      GCP_PROJECT_ID: fares201040-proj
     cmds:
       - |
         gcloud container clusters create ${CLUSTER_NAME} \
